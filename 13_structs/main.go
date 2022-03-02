@@ -32,7 +32,7 @@ func main() {
 	fmt.Println(e1)
 
 	m1 := menager{
-		employee: employee{
+		employee: employee{ // we can use another struct inside of struct
 			name:      "ayse",
 			age:       22,
 			isMarried: false,

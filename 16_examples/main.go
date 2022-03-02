@@ -14,7 +14,7 @@ func main() {
 }
 
 func (r rectangle) display() {
-	fmt.Println("kısa kenar ", r.a, "uzun kenar ", r.b)
+	fmt.Println("short edge ", r.a, "long edge ", r.b)
 }
 func (r rectangle) area() int {
 	return r.a * r.b

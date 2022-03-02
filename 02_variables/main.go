@@ -12,7 +12,7 @@ func main() {
 
 	fmt.Println("selaam", firstName, lastName, "your age is :", age, isMarried)
 
-	//fmt.Printf("%T", age)
+	fmt.Printf("%T", age) // %T type of variable
 
 	fmt.Println(empty)
 }

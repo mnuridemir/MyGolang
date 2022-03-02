@@ -6,7 +6,7 @@ func main() {
 	// x := 5
 	// y := 10
 
-	// x, y = y, x
+	// x, y = y, x // this is valid
 
 	// fmt.Println(x, y)
 
