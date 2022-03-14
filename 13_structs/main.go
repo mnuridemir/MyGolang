@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+	"time"
+)
 
 type employee struct {
 	name      string
@@ -14,8 +18,25 @@ type menager struct {
 	hasDegree bool
 }
 
+type User struct {
+	Name     string
+	SurName  string
+	Follower []User `json:"follower,omitempty"` // we can use omitempty to ignore zero values
+	Likes    []Like
+}
+
+type Like struct {
+	Date time.Time
+}
+
 func main() {
 
+	//example1()
+	example2()
+
+}
+
+func example1() {
 	e1 := employee{
 		name:      "mehmet",
 		age:       25,
@@ -46,5 +67,28 @@ func main() {
 
 	fmt.Println(m1)
 	fmt.Println(m1.employee.name)
+}
+
+func example2() {
+
+	u := User{
+		Name:    "Go",
+		SurName: "Turkiye",
+		Follower: []User{
+			{
+				Name:    "name",
+				SurName: "1",
+			},
+			{
+				Name:    "name",
+				SurName: "2",
+			},
+		},
+	}
+
+	arr, _ := json.Marshal(u)
+	fmt.Println(string(arr))
+
+	fmt.Println(u)
 
 }
